@@ -23,7 +23,7 @@ app.get('/hello' , (req,res)=>{
 })
 
 // seed the database with dummy issues , only to run once 
-seedDB();
+// seedDB();
 
 
 app.use(cors());
