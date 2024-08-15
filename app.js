@@ -25,11 +25,11 @@ app.get('/hello' , (req,res)=>{
 // seed the database with dummy issues , only to run once 
 // seedDB();
 
-
+// cors enable the react to send request to the backend server i.e helps send request from local 3000 to localhost 8000
 app.use(cors());
 
 
-
+// to parse the data
 app.use(express.json());
 
 

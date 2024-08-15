@@ -50,11 +50,13 @@ router.patch('/tasks/:id', async (req, res) => {
     try {
         const { Summary,Assignee,Reporter,Priority,Status } = req.body;
         const updatedFields = { Summary,Assignee,Reporter,Priority,Status };
+
         if (Summary) updatedFields.Summary = Summary;
         if (Assignee) updatedFields.Assignee = Assignee;
         if (Reporter) updatedFields.Reporter = Reporter;
         if (Priority) updatedFields.Priority = Priority;
         if (Status) updatedFields.Status = Status;
+        
         const updatedTask = await Issues.findByIdAndUpdate(req.params.id, updatedFields, { new: true });
         if (!updatedTask) {
             return res.status(404).json({ msg: 'Task not found.' });
